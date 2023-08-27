@@ -1,0 +1,3 @@
+local Active_Script = true
+
+return Active_Script
